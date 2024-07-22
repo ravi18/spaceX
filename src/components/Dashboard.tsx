@@ -3,10 +3,10 @@ import { useState, useEffect } from "react";
 import { FaWikipediaW, FaYoutube, FaReddit } from "react-icons/fa";
 
 export default function Dashboard() {
-  const [upcomingLaunch, setUpcomingLaunch] = useState([]);
-  const [previousLaunch, setPreviousLaunch] = useState([]);
+  const [upcomingLaunch, setUpcomingLaunch]: any = useState([]);
+  const [previousLaunch, setPreviousLaunch]: any = useState([]);
 
-  const dateStr = upcomingLaunch.launch_date_utc;
+  const dateStr = upcomingLaunch?.launch_date_utc;
   const date = new Date(dateStr);
 
   date.setMinutes(0);
@@ -21,7 +21,7 @@ export default function Dashboard() {
     hour12: true,
   });
 
-  const dateStr2 = previousLaunch.launch_date_utc;
+  const dateStr2 = previousLaunch?.launch_date_utc;
   const date2 = new Date(dateStr2);
 
   date.setMinutes(0);
@@ -73,7 +73,7 @@ export default function Dashboard() {
             </div> */}
           </div>
           <p className="text-lg text-white font-bold">
-            {upcomingLaunch.mission_name}
+            {upcomingLaunch?.mission_name}
           </p>
           <p className="text-xs text-[#FFFFFF80] font-semibold mt-2">ROCKET</p>
           <p className="text-lg text-white font-bold">
@@ -83,7 +83,7 @@ export default function Dashboard() {
             FLIGHT NUMBER
           </p>
           <p className="text-lg text-white font-bold">
-            {upcomingLaunch.flight_number}
+            {upcomingLaunch?.flight_number}
           </p>
           <p className="text-xs text-[#FFFFFF80] font-semibold mt-2">
             TIME (UTC)
